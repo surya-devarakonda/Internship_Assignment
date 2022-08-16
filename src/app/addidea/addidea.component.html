@@ -1,0 +1,82 @@
+<div fxLayout fxLayoutAlign="center center">
+    <form [formGroup]='form' (ngSubmit)="onSubmit()">
+        <h2 style="text-align: center;">Sit tight. We are here to help you out.</h2>
+
+
+
+        <div>
+            <label for="name" aria-label="Enter the name of your idea..">Name </label>
+            <input formControlName="name" name="name" id="name" type="text" class="form-control">
+            <div *ngIf="f.name.touched && f.name.invalid && f.name.errors" class="alert alert-danger">
+                <div *ngIf="f.name.errors.required">Name is required</div>
+                <div *ngIf="f.name.errors.minlength">It should be atleast 5 characters</div>
+            </div>
+        </div>
+        <!-- 
+        <div>
+            <label id="example-radio-group-label">Pick your favorite season</label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+                <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                    {{season}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <div>Your favorite season is: {{favoriteSeason}}
+
+            </div>
+
+        </div>
+ -->
+        <br>
+        <br>
+        <label for="">Gender</label>
+        <br>
+        <mat-radio-group aria-label="Select an option" color="primary" [(ngModel)]="selectGender">
+            <mat-radio-button class="example-radio-button" *ngFor="let g of gender" [value]="g">
+                {{g}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <br>
+        <br>
+        <label for="">What is your concern about?</label>
+        <br>
+        <mat-form-field appearance="outline" [(ngModel)]="selectTypes">
+            <mat-label>Select</mat-label>
+            <mat-select>
+                <mat-option value="">
+                    Select Option
+                </mat-option>
+                <mat-option *ngFor="let t of type" [value]="t">{{t}}</mat-option>
+
+
+            </mat-select>
+        </mat-form-field>
+
+        <div>
+
+        </div>
+
+
+
+        <br>
+        <br>
+        <br>
+        <div>
+            <label for="body" aria-placeholder="Elaborate about your concern in minimum of 20 Words">Description</label>
+            <textarea formControlName="body" class="form-control" id="body" name="body" cols="70" rows="10"></textarea>
+            <div *ngIf="f.body.touched && f.body.invalid && f.body.errors " class="alert alert-danger">
+                <div *ngIf="f.body.errors.required" style="width: 200px;">This coulumn is required</div>
+                <div *ngIf="f.body.errors.minlength">Detailed message is required in minimum 20 words</div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="form-group" style="text-align: center;">
+            <!-- <button class="btn btn-primary" type="submit" style="align-items: center;">Submit</button> -->
+            <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+        </div>
+
+    </form>
+</div>
