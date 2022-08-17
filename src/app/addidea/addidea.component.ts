@@ -45,6 +45,7 @@ export class AddideaComponent implements OnInit {
     this.res.res.push(this.form.value)
     console.log(this.res.res)
     this.form.reset()
+    console.log(this.afuConfig)
     
   }
   afuConfig = {
