@@ -1,27 +1,33 @@
 <mat-tab-group mat-align-tabs="center">
     <mat-tab label="All responses">
         <div class="container">
+            <!-- using mat-table which is imported from the angular material -->
             <table mat-table [dataSource]="allIdeas">
                 <ng-container style="margin-right: 50px;" matColumnDef="Ideas">
                     <th mat-header-cell *matHeaderCellDef>Name</th>
                     <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+                    <!-- accessing values in the array to get the name of the user -->
                 </ng-container>
                 <ng-container style="margin-right: 50px;" matColumnDef="Gender">
                     <th mat-header-cell *matHeaderCellDef>Gender</th>
                     <td mat-cell *matCellDef="let row">{{row.gender}}</td>
+                    <!-- accessing values in the array to get the gender -->
                 </ng-container>
                 <ng-container style="margin-right: 50px;" matColumnDef="Concern Type">
                     <th mat-header-cell *matHeaderCellDef>Concern Type</th>
                     <td mat-cell *matCellDef="let row">{{ row.type}}</td>
+                    <!-- accessing values in the array to get to know their concern type -->
                 </ng-container>
 
                 <ng-container matColumnDef="Description" style="text-align: center;">
                     <th mat-header-cell *matHeaderCellDef>Description</th>
                     <td mat-cell *matCellDef="let row">{{ row.body }}</td>
+                    <!-- accessing values in the array to get their description -->
                 </ng-container>
                 <ng-container style="margin-right: 50px;" matColumnDef="File">
                     <th mat-header-cell *matHeaderCellDef>File</th>
-                    <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+                    <td mat-cell *matCellDef="let row">{{ row.file }}</td>
+                    <!-- accessing values in the array to get the name of the file-->
                 </ng-container>
                 &emsp14;
 

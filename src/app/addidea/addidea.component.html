@@ -8,6 +8,7 @@
             <label for="name" aria-label="Enter the name of your idea..">Name </label>
             <input formControlName="name" name="name" id="name" type="text" class="form-control">
             <div *ngIf="f.name.touched && f.name.invalid && f.name.errors" class="alert alert-danger">
+                <!-- validating near the inputs with the condition -->
                 <div *ngIf="f.name.errors.required">Name is required</div>
                 <div *ngIf="f.name.errors.minlength">It should be atleast 5 characters</div>
             </div>
@@ -16,7 +17,7 @@
         <label for="">Gender</label>
         <br>
         <mat-radio-group aria-label="Select an option" color="primary" formControlName="gender" id="gender" name="gender">
-            <!-- <mat-radio-group aria-label="Select an option" color="primary"> -->
+
             <mat-radio-button class="example-radio-button" *ngFor="let g of gender" [value]="g">
                 {{g}}
             </mat-radio-button>
@@ -28,7 +29,7 @@
         <br>
         <mat-form-field appearance="outline">
 
-            <!-- <mat-form-field appearance="outline"> -->
+
             <mat-label>Select</mat-label>
             <mat-select formControlName="type" id="type" name="type">
                 <mat-option value="">
