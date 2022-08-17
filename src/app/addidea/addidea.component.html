@@ -11,26 +11,12 @@
                 <div *ngIf="f.name.errors.required">Name is required</div>
                 <div *ngIf="f.name.errors.minlength">It should be atleast 5 characters</div>
             </div>
-        </div>
-        <!-- 
-        <div>
-            <label id="example-radio-group-label">Pick your favorite season</label>
-            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
-                <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-                    {{season}}
-                </mat-radio-button>
-            </mat-radio-group>
-            <div>Your favorite season is: {{favoriteSeason}}
-
-            </div>
-
-        </div>
- -->
-        <br>
+        </div><br>
         <br>
         <label for="">Gender</label>
         <br>
-        <mat-radio-group aria-label="Select an option" color="primary" [(ngModel)]="selectGender">
+        <mat-radio-group aria-label="Select an option" color="primary" formControlName="gender" id="gender" name="gender">
+            <!-- <mat-radio-group aria-label="Select an option" color="primary"> -->
             <mat-radio-button class="example-radio-button" *ngFor="let g of gender" [value]="g">
                 {{g}}
             </mat-radio-button>
@@ -40,9 +26,11 @@
         <br>
         <label for="">What is your concern about?</label>
         <br>
-        <mat-form-field appearance="outline" [(ngModel)]="selectTypes">
+        <mat-form-field appearance="outline">
+
+            <!-- <mat-form-field appearance="outline"> -->
             <mat-label>Select</mat-label>
-            <mat-select>
+            <mat-select formControlName="type" id="type" name="type">
                 <mat-option value="">
                     Select Option
                 </mat-option>
@@ -71,10 +59,13 @@
         </div>
         <br>
         <br>
+
+        <angular-file-uploader [config]="afuConfig">
+        </angular-file-uploader>
         <br>
         <br>
         <div class="form-group" style="text-align: center;">
-            <!-- <button class="btn btn-primary" type="submit" style="align-items: center;">Submit</button> -->
+
             <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
         </div>
 

@@ -23,7 +23,10 @@ export class AddideaComponent implements OnInit {
   }
   form = new FormGroup({
     name: new FormControl('',[Validators.required, Validators.minLength(5)]),
-    body: new FormControl('',[Validators.required, Validators.minLength(50)])
+    body: new FormControl('',[Validators.required, Validators.minLength(50)]),
+    gender: new FormControl('',[Validators.required]),
+    type: new FormControl('',[Validators.required])
+
   })  
 
   constructor(private res: ResponsesService)
@@ -36,11 +39,19 @@ export class AddideaComponent implements OnInit {
   }
   onSubmit()
   {
-    console.log(this.form.value)
+    console.log(this.form)
+    console.log(this.selectGender)
+    console.log(this.selectTypes)
     this.res.res.push(this.form.value)
     console.log(this.res.res)
     this.form.reset()
+    
   }
+  afuConfig = {
+    uploadAPI: {
+      url:"https://slack.com/api/files.upload"
+    }
+};
 
 
 

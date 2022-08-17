@@ -19,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatRadioModule,
     MatFormFieldModule,
     MatSelectModule,
-    
+    AngularFileUploaderModule
   ],
   providers: [
     ResponsesService

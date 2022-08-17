@@ -20,7 +20,7 @@ const THUMBUP_ICON = `
 
 export class ResponsesComponent
 {
-  displayedColumns=['Ideas','Description','Vote'];
+  displayedColumns=['Ideas','Gender','Concern Type','Description','File'];
 
 
   constructor(
